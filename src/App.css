@@ -9,7 +9,7 @@
   width: 10px;
 }
 .indexText::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
