@@ -4,7 +4,43 @@
   font-family: 'data';
   src:url('./data.ttf')
 }
+.uploadIcon{
+  background-image: url("./assets/upload.png");
+  background-size:27%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:all 0.2s;
+}
+.downloadIcon{
+  background-image: url("./assets/downloads.png");
+  background-size:32%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:all 0.2s;
+}
+.settingIcon{
+  background-image: url("./assets/customize.png");
+  background-size:32%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.uploadIcon:hover{
+  background-color: #888;
+  
 
+  transition:all 0.2s;
+  cursor:pointer;
+}
+.downloadIcon:hover{
+  background-color: #888;
+  
+
+  transition:all 0.2s;
+  cursor:pointer;
+}
+.uploadIcon > input{
+  cursor:pointer;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
