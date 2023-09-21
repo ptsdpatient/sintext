@@ -32,10 +32,10 @@ function App() {
             <div style={{width:'100%',height:'100vh',backgroundColor:'darkgrey',display:'flex',flexDirection:'column'}}>
                 <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:'snow',justifyContent:'space-evenly'}}></div> 
                 <div style={{width:'100%',height:'92%',display:'flex'}}>
-                <div className="indexText" style={{cursor:'pointer',userSelect:'none',width:'4%',height:'100%',fontFamily:'sans-serif',resize:'none',border:'none',backgroundColor:'snow'}}>
-                {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:'1rem',textAlign:'center'}}>{key}</p>))}
+                <div className="indexText" style={{cursor:'pointer',width:'4%',height:'auto',fontFamily:'sans-serif',resize:'none',border:'none',backgroundColor:'snow'}}>
+                  {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:'1rem',textAlign:'center'}}>{key}</p>))}
                 </div>
-                <textarea value={text} onChange={handleTextChange} style={{width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:'sans-serif',fontSize:'1rem'}}></textarea> 
+                <textarea value={text} onChange={handleTextChange} style={{width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:'data',fontSize:'1rem'}}></textarea> 
                 </div>
                 <input value={lineCount} style={{width:'100%',border:'none'}}></input>
                   

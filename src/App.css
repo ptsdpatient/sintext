@@ -1,9 +1,15 @@
 /* Track */
+
+@font-face{
+  font-family: 'data';
+  src:url('./data.ttf')
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 .indexText::-webkit-scrollbar {
-  width: 0px;
+  width: 10px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
