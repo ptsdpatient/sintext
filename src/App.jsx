@@ -9,7 +9,7 @@ function App() {
   const divRef = useRef(null);
   const textareaRef = useRef(null);
   const fileInputRef = useRef(null);
-  
+  const [settingMenuHidden,setSettingMenuHidden] = useState(false);
  
 
   const handleFileOpen = (event) => {
@@ -71,30 +71,44 @@ function App() {
     <>
 
         <div style={{position:'fixed',width:'100%',height:'100%',display:'flex'}}>
-            <div style={{width:'16%',height:'100vh',backgroundColor:'gray'}}> 
+            <div style={{width:'16%',height:'100vh',backgroundColor:'#888'}}> 
                 
               <div style={{display:'flex',flexDirection:'column'}}>
                 
                 <div style={{width:'100%'}}>
-                  <p style={{margin:'0rem',fontFamily:'data',fontSize:'1rem',padding:'0rem',paddingTop:'6px',paddingLeft:'10px'}}>File Name</p>
-                  <input style={{margin:'0rem',padding:'0.1rem',fontFamily:'data',fontSize:'1rem',width:'100%',overflowX:'auto',paddingLeft:'10px'}} id="file_name" placeholder='newfile.txt'></input>
+                   <input style={{fontFamily:'data',fontSize:'1rem',width:'100%',overflowX:'auto',height:'1.5rem',outline:'none',border:'none',margin:'auto',textIndent:'6px'}} id="file_name" placeholder='newfile.txt'></input>
                 </div>
-                <p style={{width:'100%',textAlign:'center',margin:'0rem',fontFamily:'data',fontSize:'1rem',padding:'0rem',paddingTop:'6px'}}>Upload</p>
-                <div className="uploadIcon" style={{width:'60%',margin:'auto',height:'10vh',borderRadius:'20px'}}>
-                <input type="file" ref={fileInputRef} onChange={handleFileOpen} style={{width:'100%',height:'100%',opacity:'0',border:'none'}}></input>
+                <div className="uploadIcon" style={{width:'40%',margin:'auto',height:'10vh',borderRadius:'20px'}}>
+                <input type="file" title=" " ref={fileInputRef} onChange={handleFileOpen} style={{width:'100%',height:'100%',opacity:'0',border:'none'}}></input>
                 </div>
-                <p style={{width:'100%',textAlign:'center',margin:'0rem',fontFamily:'data',fontSize:'1rem',padding:'0rem',paddingTop:'6px'}}>Download</p> 
-                <div onClick={handleDownload} className="downloadIcon" style={{width:'60%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
+                <div onClick={handleDownload} className="downloadIcon" style={{width:'40%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
                 
-                <div className="settingIcon" style={{width:'60%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
-                <button onClick={()=>{changeTheme()}}>Theme</button>  
-
+                <div className="settingIcon" style={{width:'40%',height:'10vh',borderRadius:'20px',margin:'auto'}} onClick={()=>{setSettingMenuHidden(settingMenuHidden?false:true)}}></div>
+                
+                <div style={{display:settingMenuHidden?'none':'block',userSelect:'none'}}>
+                <div style={{width:'21%',margin:'auto',marginTop:'1rem'}}>
+                <input style={{padding:'0rem',fontSize:'1.2rem',width:'2rem',height:'5vh',margin:'auto',backgroundColor:'#888',border:'none',fontWeight:'bolder',textIndent:'2px'}}></input>
+                </div>
+                <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
+                <div className="minus" style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
+                <div className="fontSize" style={{width:'33%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
+                <div className="plus" style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
+                </div>
+                <div style={{textAlign:'center',fontSize:'1.2rem',marginTop:'1rem'}}>sans-serif</div>
+                <div className="fontFamily" style={{width:'40%',height:'7vh',borderRadius:'20px',margin:'auto'}}></div>
+                
+                <div style={{textAlign:'center',fontSize:'1.2rem',marginTop:'1rem'}}>sans-serif</div>
+                <div className="theme" style={{width:'40%',height:'7vh',borderRadius:'20px',margin:'auto'}}></div>
+               
+                
+                
+                </div>
               </div>
             </div>
             <div style={{width:'100%',height:'100vh',backgroundColor:'darkgrey',display:'flex',flexDirection:'column'}}>
                 <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:'snow',justifyContent:'space-evenly'}}></div> 
                 <div style={{width:'100%',height:'92%',display:'flex'}}>
-                <div className="indexText" style={{cursor:'pointer',width:'4%',height:'auto',fontFamily:'sans-serif',resize:'none',border:'none',backgroundColor:'snow',overflowY:'auto'}} ref={divRef} onScroll={handleDivScroll}>
+                <div className="indexText" style={{width:'4%',height:'auto',fontFamily:'sans-serif',resize:'none',border:'none',backgroundColor:'snow',overflowY:'auto'}} ref={divRef} onScroll={handleDivScroll}>
                   {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:'1rem',textAlign:'center',fontFamily:'data'}}>{key}</p>))}
                 </div>
                 <textarea value={text} onChange={handleTextChange} style={{width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:'data',fontSize:'1rem'}} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 

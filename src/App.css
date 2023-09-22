@@ -6,28 +6,56 @@
 }
 .uploadIcon{
   background-image: url("./assets/upload.png");
-  background-size:27%;
+  background-size:42%;
   background-position: center;
   background-repeat: no-repeat;
   transition:all 0.2s;
 }
 .downloadIcon{
   background-image: url("./assets/downloads.png");
-  background-size:32%;
+  background-size:46%;
   background-position: center;
   background-repeat: no-repeat;
   transition:all 0.2s;
 }
 .settingIcon{
   background-image: url("./assets/customize.png");
-  background-size:32%;
+  background-size:42%;
   background-position: center;
   background-repeat: no-repeat;
 }
-.uploadIcon:hover{
+.fontSize{
+  background-image: url("./assets/font-size.png");
+  background-size:80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.fontFamily{
+  background-image: url("./assets/font-family.png");
+  background-size:36%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.theme{
+  background-image: url("./assets/theme.png");
+  background-size:60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.minus{
+  background-image: url("./assets/minus.png");
+  background-size:30%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plus{
+  background-image: url("./assets/plus.png");
+  background-size:30%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.theme:hover,.uploadIcon:hover,.settingIcon:hover,.plus:hover,.minus:hover,.fontFamily:hover{
   background-color: #888;
-  
-
   transition:all 0.2s;
   cursor:pointer;
 }
