@@ -84,27 +84,20 @@ function App() {
                 
                 <div className="settingIcon" style={{width:'40%',height:'10vh',borderRadius:'20px',margin:'auto'}} onClick={()=>{setSettingMenuHidden(settingMenuHidden?false:true)}}></div>
                 
-                <div style={{width:'100%',display:settingMenuHidden?'none':'flex',flexDirection:'column',userSelect:'none',height:'50vh',justifyContent:'space-around'}}>
+                <div style={{width:'100%',display:settingMenuHidden?'none':'flex',flexDirection:'column',userSelect:'none',height:'40vh',justifyContent:'space-between'}}>
                 <div>
-                <div style={{width:'21%',margin:'auto',marginTop:'1rem'}}>         
-                <input readOnly value={fontSize} style={{userSelect:'none',padding:'0rem',type:"text",fontSize:'1.6rem',width:'2rem',height:'5vh',margin:'auto',backgroundColor:'#888',border:'none',textIndent:'4px'}}></input>
+                <div style={{width:'21%',margin:'auto'}}>         
+                <input readOnly value={fontSize} style={{userSelect:'none',padding:'0rem',type:"text",fontSize:'1.4rem',width:'2rem',height:'5vh',margin:'auto',backgroundColor:'#888',border:'none',textIndent:'4px',fontFamily:'poppins'}}></input>
                 </div>
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
                 <div className="minus" onClick={()=>{if(fontSize>10)setFontSize(fontSize-1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
-                <div className="fontSize" style={{width:'33%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
+                <p style={{fontSize:'1.5rem',fontFamily:'poppins',borderRadius:'20px',margin:'auto'}}>Aa</p>
                 <div className="plus" onClick={()=>{if(fontSize<99)setFontSize(fontSize+1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
                 </div>
                 </div>
                 </div>
-                <div>
-                <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
-                <div className="left" onClick={()=>{ if(FontFamilyIndex>0)setFontFamilyIndex(FontFamilyIndex-1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
-                <div className="fontFamily" style={{width:'33%',height:'7vh',borderRadius:'20px',margin:'auto'}}></div>
-                <div className="right" onClick={()=>{if(FontFamilyIndex<6)setFontFamilyIndex(FontFamilyIndex+1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
-                </div>
-                <div style={{textAlign:'center',fontSize:'1.2rem',fontFamily:fonts[FontFamilyIndex]}}>{fonts[FontFamilyIndex]}</div>
-                </div>
+                
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
                 <div className="left" onClick={()=>{ if(themeIndex>0){setThemeIndex(themeIndex-1)}}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
@@ -112,7 +105,16 @@ function App() {
                 <div className="right" onClick={()=>{ if(themeIndex<1){setThemeIndex(themeIndex+1)}}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
                 </div>
                 <div style={{textAlign:'center',fontSize:'1.2rem',fontFamily:'poppins'}}>{themes[themeIndex]}</div>
-                </div>   
+                </div>  
+                <div>
+                <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
+                <div className="left" onClick={()=>{ if(FontFamilyIndex>0)setFontFamilyIndex(FontFamilyIndex-1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
+                <p style={{fontSize:'1.5rem',fontFamily:'poppins',borderRadius:'20px',margin:'auto'}}>Tt</p>
+                <div className="right" onClick={()=>{if(FontFamilyIndex<6)setFontFamilyIndex(FontFamilyIndex+1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
+                </div>
+                <div style={{textAlign:'center',fontSize:'1.2rem',fontFamily:'poppins'}}>{fonts[FontFamilyIndex]}</div>
+                </div>
+                 
                 </div>
               </div>
             </div>
