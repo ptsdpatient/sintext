@@ -12,7 +12,7 @@ function App() {
   const fonts=["anonymouspro","cascadia","dejavusans","jetbrains","poppins","quicksandbook","sourcecodepro"]
   const themes=["dark","light"]
   const [themeIndex,setThemeIndex]=useState(0);
-  const [fontSize,setFontSize]=useState(0)
+  const [fontSize,setFontSize]=useState(20)
   const [FontFamilyIndex,setFontFamilyIndex]=useState(0)
   const handleFileOpen = (event) => {
     const file = event.target.files[0];
@@ -75,7 +75,7 @@ function App() {
             <div style={{width:'16%',height:'100vh',backgroundColor:'#888'}}> 
               <div style={{display:'flex',flexDirection:'column'}}>
                 <div style={{width:'100%'}}>
-                   <input style={{fontFamily:fonts[FontFamilyIndex],fontSize:'1rem',width:'100%',overflowX:'auto',height:'1.5rem',outline:'none',border:'none',margin:'auto',textIndent:'6px'}} id="file_name" placeholder='newfile.txt'></input>
+                   <input style={{fontFamily:'poppins',fontSize:'1rem',width:'100%',overflowX:'auto',height:'1.5rem',outline:'none',border:'none',margin:'auto',textIndent:'6px'}} id="file_name" placeholder='newfile.txt'></input>
                 </div>
                 <div className="uploadIcon" style={{width:'40%',margin:'auto',height:'10vh',borderRadius:'20px'}}>
                 <input type="file" title=" " ref={fileInputRef} onChange={handleFileOpen} style={{width:'100%',height:'100%',opacity:'0',border:'none'}}></input>
@@ -91,7 +91,7 @@ function App() {
                 </div>
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto'}}>
-                <div className="minus" onClick={()=>{if(fontSize>1)setFontSize(fontSize-1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
+                <div className="minus" onClick={()=>{if(fontSize>10)setFontSize(fontSize-1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}}></div>
                 <div className="fontSize" style={{width:'33%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
                 <div className="plus" onClick={()=>{if(fontSize<99)setFontSize(fontSize+1)}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
                 </div>
@@ -111,7 +111,7 @@ function App() {
                 <div className="theme" style={{width:'33%',height:'7vh',borderRadius:'20px',margin:'auto'}}></div>
                 <div className="right" onClick={()=>{ if(themeIndex<1){setThemeIndex(themeIndex+1)}}} style={{width:'33%',height:'5vh',borderRadius:'20px',margin:'auto'}} ></div>
                 </div>
-                <div style={{textAlign:'center',fontSize:'1.2rem',fontFamily:fonts[FontFamilyIndex]}}>{themes[themeIndex]}</div>
+                <div style={{textAlign:'center',fontSize:'1.2rem',fontFamily:'poppins'}}>{themes[themeIndex]}</div>
                 </div>   
                 </div>
               </div>
@@ -119,10 +119,11 @@ function App() {
             <div style={{width:'100%',height:'100vh',backgroundColor:'darkgrey',display:'flex',flexDirection:'column'}}>
                 <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:'snow',justifyContent:'space-evenly'}}></div> 
                 <div style={{width:'100%',height:'92%',display:'flex'}}>
-                <div className="indexText" style={{width:'4%',height:'auto',fontFamily:fonts[FontFamilyIndex],resize:'none',border:'none',backgroundColor:'snow',overflowY:'auto'}} ref={divRef} onScroll={handleDivScroll}>
-                  {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:'1rem',textAlign:'center',fontFamily:fonts[FontFamilyIndex]}}>{key}</p>))}
+               
+                <div className="indexText" style={{width:fontSize+fontSize*0.6,height:'auto',fontFamily:fonts[FontFamilyIndex],resize:'none',border:'none',backgroundColor:'snow',overflowY:'auto'}} ref={divRef} onScroll={handleDivScroll}>
+                  {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:fontSize,textAlign:'center',fontFamily:fonts[FontFamilyIndex]}}>{key}</p>))}
                 </div>
-                <textarea value={text} onChange={handleTextChange} style={{width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:fonts[FontFamilyIndex],fontSize:'1rem'}} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 
+                <textarea value={text} onChange={handleTextChange} style={{width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:fonts[FontFamilyIndex],fontSize:fontSize,paddingLeft:fontSize*0.4 }} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 
                 </div>
                 <input value={lineCount-1} style={{width:'100%',border:'none'}}></input>
                   
