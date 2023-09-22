@@ -12,7 +12,7 @@ function App() {
   const fonts=["anonymouspro","cascadia","dejavusans","jetbrains","poppins","quicksandbook","sourcecodepro"]
   const themes=["dark","light"]
   const [themeIndex,setThemeIndex]=useState(0);
-  const [fontSize,setFontSize]=useState(20)
+  const [fontSize,setFontSize]=useState(18)
   const [FontFamilyIndex,setFontFamilyIndex]=useState(0) 
   const handleFileOpen = (event) => {
     const file = event.target.files[0];
@@ -65,7 +65,15 @@ function App() {
       return formattedNumber;
     }));  
   }
-
+  const handleKeyDown = (event) => {
+    if (event.key === 'Tab') {
+      setText(text+'   ')
+      event.preventDefault(); 
+    }
+    if(event.key==='Escape'){
+      document.getElementById("cmd").focus();
+    }
+  };
  
 
   return (
@@ -117,15 +125,15 @@ function App() {
               </div>
             </div>
             <div style={{width:'100%',height:'100vh',backgroundColor:(themes[themeIndex]==="light")?'snow':'rgb(42,42,42)',display:'flex',flexDirection:'column'}}>
-                <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'#2a2a2a',justifyContent:'space-evenly'}}></div> 
+                <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'#2a2a2a',justifyContent:'space-evenly'}}><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>save file : s $filename</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>upload file : u</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontsize : fs $number</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontfamily : ff 0-6</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>change theme : t 0-1</p></div> 
                 <div style={{width:'100%',height:'92%',display:'flex'}}>
                
                 <div className="indexText" style={{width:fontSize+fontSize*0.6,color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'rgb(42,42,42)',height:'auto',fontFamily:fonts[FontFamilyIndex],resize:'none',border:'none',overflowY:'auto'}} ref={divRef} onScroll={handleDivScroll}>
                   {numberArray.map((key,index)=>(<p key={index} style={{margin:'0rem',padding:'0rem',fontSize:fontSize,textAlign:'center',fontFamily:fonts[FontFamilyIndex]}}>{key}</p>))}
                 </div>
-                <textarea value={text} onChange={handleTextChange} style={{letterSpacing:'1.2px',width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:fonts[FontFamilyIndex],fontSize:fontSize,paddingLeft:fontSize*0.4 ,color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'rgb(42,42,42)',paddingBottom:'0rem'}} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 
+                <textarea value={text} onKeyDown={handleKeyDown} onChange={handleTextChange} style={{letterSpacing:'1.2px',width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:fonts[FontFamilyIndex],fontSize:fontSize,paddingLeft:fontSize*0.4 ,color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'rgb(42,42,42)',paddingBottom:'0rem'}} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 
                 </div>
-                <input placeholder="Run Command Here" style={{width:'100%',fontFamily:'poppins',fontSize:'1rem',border:'none',height:'4%',backgroundColor:(themes[themeIndex]==="light")?'#ECF7FF':'#202020',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow'}}></input>
+                <input placeholder="Run Command Here (Press Esc to Enter)" id="cmd" style={{width:'100%',fontFamily:'poppins',fontSize:'1rem',border:'none',height:'4%',backgroundColor:(themes[themeIndex]==="light")?'#ECF7FF':'#202020',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow'}}></input>
                   
             </div>   
         </div>
