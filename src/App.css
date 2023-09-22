@@ -91,18 +91,17 @@
   background-repeat: no-repeat;
 }
 
-.left:hover,.right:hover,.theme:hover,.uploadIcon:hover,.settingIcon:hover,.plus:hover,.minus:hover,.fontFamily:hover{
-  background-color: #888;
-  transition:all 0.2s;
-  cursor:pointer;
-}
-.downloadIcon:hover{
-  background-color: #888;
+.downloadIcon:hover,.left:hover,.right:hover,.uploadIcon:hover,.settingIcon:hover,.plus:hover,.minus:hover,.fontFamily:hover{
   
-
   transition:all 0.2s;
   cursor:pointer;
 }
+
+.downloadIcon:hover,.uploadIcon:hover,.settingIcon:hover{
+  
+  transform:scale(110%);
+}
+
 .uploadIcon > input{
   cursor:pointer;
 }
@@ -132,4 +131,12 @@ body,html{
     margin: 0rem;
     padding: 0rem;   
 
+}
+
+.xyz{
+  color:rgb(236, 247, 255);
+  color:rgb(32, 32, 32);
+  color:#eff8ff;
+  color:rgb(56, 56, 56);
+  color:#252525
 }
