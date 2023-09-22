@@ -89,26 +89,26 @@ function App() {
                 
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto',minHeight:'4rem'}}>
-                <div className="minus" onClick={()=>{if(fontSize>10)setFontSize(fontSize-1)}} style={{minHeight:'1.5rem',width:'33%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
+                <div className="minus" onClick={()=>{if(fontSize>10)setFontSize(fontSize-1)}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
                 <p style={{fontSize:'1.5rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'#dbe9f3',fontFamily:'poppins',borderRadius:'20px',margin:'auto'}}>{fontSize}</p>
-                <div className="plus" onClick={()=>{if(fontSize<99)setFontSize(fontSize+1)}} style={{minHeight:'1.5rem',width:'33%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
+                <div className="plus" onClick={()=>{if(fontSize<99)setFontSize(fontSize+1)}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
                 </div>
                 </div>
                 </div>
                 
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto',minHeight:'4rem'}}>
-                <div className="left" onClick={()=>{ if(themeIndex>0){setThemeIndex(themeIndex-1)}}} style={{minHeight:'1.5rem',width:'30%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
+                <div className="left" onClick={()=>{ if(themeIndex>0){setThemeIndex(themeIndex-1)}}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
                 <div className="theme" style={{width:'33%',height:'7vh',minHeight:'3rem',borderRadius:'20px',margin:'auto'}}></div>
-                <div className="right" onClick={()=>{ if(themeIndex<1){setThemeIndex(themeIndex+1)}}} style={{minHeight:'1.5rem',width:'33%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
+                <div className="right" onClick={()=>{ if(themeIndex<1){setThemeIndex(themeIndex+1)}}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
                 </div>
                 <div style={{textAlign:'center',fontSize:'1.1rem',letterSpacing:'1.2px',color:(themes[themeIndex]==="light")?'#1b1b1b':'#dbe9f3',fontFamily:'poppins'}}>{themes[themeIndex]}</div>
                 </div>  
                 <div>
                 <div style={{width:'70%',display:'flex',alignItems:'center',margin:'auto',minHeight:'4rem'}}>
-                <div className="left" onClick={()=>{ if(FontFamilyIndex>0)setFontFamilyIndex(FontFamilyIndex-1)}} style={{minHeight:'1.5rem',width:'33%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
+                <div className="left" onClick={()=>{ if(FontFamilyIndex>0)setFontFamilyIndex(FontFamilyIndex-1)}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}}></div>
                 <p style={{fontSize:'1.5rem',fontFamily:'poppins',borderRadius:'20px',color:(themes[themeIndex]==="light")?'#1b1b1b':'#dbe9f3',margin:'auto'}}>Tt</p>
-                <div className="right" onClick={()=>{if(FontFamilyIndex<6)setFontFamilyIndex(FontFamilyIndex+1)}} style={{minHeight:'1.5rem',width:'33%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
+                <div className="right" onClick={()=>{if(FontFamilyIndex<6)setFontFamilyIndex(FontFamilyIndex+1)}} style={{minHeight:'1.5rem',width:'25%',height:'5vh',borderRadius:'20px',margin:'auto',backgroundColor:(themes[themeIndex]==="light")?'':'rgb(56,56,56)'}} ></div>
                 </div>
                 <div style={{textAlign:'center',fontSize:'1rem',fontFamily:'poppins',color:(themes[themeIndex]==="light")?'#1b1b1b':'#dbe9f3',letterSpacing:'1.2px'}}>{fonts[FontFamilyIndex]}</div>
                 </div>
