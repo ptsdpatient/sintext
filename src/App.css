@@ -1,9 +1,32 @@
-/* Track */
-
 @font-face{
-  font-family: 'data';
-  src:url('./data.ttf')
+  font-family: 'anonymouspro';
+  src:url('./anonymouspro.ttf')
 }
+@font-face{
+  font-family: 'cascadia';
+  src:url('./cascadia.ttf')
+}
+@font-face{
+  font-family: 'dejavusans';
+  src:url('./dejavusans.ttf')
+}
+@font-face{
+  font-family: 'poppins';
+  src:url('./poppins.ttf')
+}
+@font-face{
+  font-family: 'quicksandbook';
+  src:url('./quicksandbook.otf')
+}
+@font-face{
+  font-family: 'sourcecodepro';
+  src:url('./sourcecodepro.ttf')
+}
+@font-face{
+  font-family: 'jetbrains';
+  src:url('./jetbrains.ttf')
+}
+
 .uploadIcon{
   background-image: url("./assets/upload.png");
   background-size:42%;
@@ -32,13 +55,13 @@
 }
 .fontFamily{
   background-image: url("./assets/font-family.png");
-  background-size:36%;
+  background-size:60%;
   background-position: center;
   background-repeat: no-repeat;
 }
 .theme{
   background-image: url("./assets/theme.png");
-  background-size:60%;
+  background-size:80%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -54,7 +77,21 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.theme:hover,.uploadIcon:hover,.settingIcon:hover,.plus:hover,.minus:hover,.fontFamily:hover{
+.left{
+  background-image: url("./assets/left.png");
+  background-size:30%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.right{
+  background-image: url("./assets/left.png");
+  background-size:30%;
+  transform: scaleX(-1);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left:hover,.right:hover,.theme:hover,.uploadIcon:hover,.settingIcon:hover,.plus:hover,.minus:hover,.fontFamily:hover{
   background-color: #888;
   transition:all 0.2s;
   cursor:pointer;
