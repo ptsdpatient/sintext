@@ -1,5 +1,6 @@
 import './App.css'
 import {useState,useRef} from 'react'
+import logo from './assets/logo.png'
 function App() {
 
   const [text,setText]=useState('');
@@ -111,16 +112,21 @@ function App() {
         
               <div style={{display:'flex',flexDirection:'column'}}>
                 <div style={{width:'100%',minWidth:'10rem',backgroundColor:'snow',position:'relative'}}>
-                <div style={{position:'absolute',top:'5rem',left:navbarHide?'-10%':'84%',width:'3rem',height:'3rem',borderRadius:'0% 50% 50% 0%',backgroundColor:themes[themeIndex]==="light"?'rgb(195, 229, 255)':'rgb(32, 32, 32)'}}>
+                <div style={{position:'absolute',top:'10rem',bottom:'50rem',left:navbarHide?'-10%':'84%',width:'3rem',height:'3rem',borderRadius:'0% 50% 50% 0%',backgroundColor:themes[themeIndex]==="light"?'rgb(195, 229, 255)':'rgb(32, 32, 32)'}}>
                 <div onClick={()=>setNavbarHide(navbarHide?false:true)} className={navbarHide?"right":"left"} style={{width:'100%',margin:'auto',height:'100%'}}></div>
                 
                 </div></div>
+                <img src={logo} style={{width:'60%',margin:'auto'}}></img>
+                
                 <div style={{display:navbarHide?'none':'block'}}>
                 <div style={{width:'100%'}}>
-                   <input onChange={changeFileNameInput} style={{letterSpacing:'1.1px',fontFamily:'poppins',padding:'0rem',fontSize:'1rem',width:'100%',overflowX:'auto',height:'1.5rem',outline:'none',border:'none',margin:'auto',textIndent:'6px',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'snow':'rgb(42,42,42)'}} id="file_name" placeholder='newfile.txt'></input>
+                   <input onChange={changeFileNameInput} style={{letterSpacing:'1.1px',fontFamily:'poppins',padding:'0rem',fontSize:'1rem',width:'100%',overflowX:'auto',height:'1.5rem',outline:'none',border:'none',margin:'auto',textIndent:'6px',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'snow':'rgb(42,42,42)',marginTop:'0.5rem'}} id="file_name" placeholder='newfile.txt'></input>
                 </div>
                 <div className="uploadIcon" style={{minHeight:'3rem',width:'40%',margin:'auto',height:'10vh',borderRadius:'20px'}}>
                 <input type="file" title=" " ref={fileInputRef} onChange={handleFileOpen} style={{width:'100%',height:'100%',opacity:'0',border:'none'}}></input>
+                
+
+
                 </div>
                 <div onClick={handleDownload} className="downloadIcon" style={{minHeight:'3rem',width:'40%',height:'10vh',borderRadius:'20px',margin:'auto'}}></div>
                 
@@ -160,7 +166,7 @@ function App() {
               </div>
             </div>
             <div style={{width:'100%',height:'100vh',backgroundColor:(themes[themeIndex]==="light")?'snow':'rgb(42,42,42)',display:'flex',flexDirection:'column'}}>
-                <div style={{display:'flex',height:'4%',width:'100%',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'#2a2a2a',justifyContent:'space-evenly',marginBottom:'0.5rem'}}><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>save file : s filename</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontsize : fs 10-98</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontfamily : ff 0-12</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>change theme : t 0-1</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>toggle navbar : n</p></div> 
+                <div style={{display:'flex',height:'4%',minHeight:'1rem',minWidth:'60rem',width:'100%',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'#2a2a2a',justifyContent:'space-evenly',marginBottom:'0.5rem'}}><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>save file : s filename</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontsize : fs 10-98</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>set fontfamily : ff 0-12</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>change theme : t 0-1</p><p style={{margin:'0rem',padding:'0rem',fontFamily:'poppins',fontSize:'1rem',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'gray'}}>toggle navbar : n</p></div> 
                 
                 <div style={{width:'97%',height:'92%',display:'flex',marginLeft:'auto'}}>
                
@@ -169,7 +175,7 @@ function App() {
                 </div>
                 <textarea id="editor" value={text} onKeyDown={handleKeyDown} onChange={handleTextChange} style={{letterSpacing:'1.2px',width:'96%',height:'100%',resize:'none',padding:'0rem',margin:'0rem',border:'none',overflowX:'scroll',whiteSpace: 'nowrap',fontFamily:fonts[FontFamilyIndex],fontSize:fontSize,paddingLeft:fontSize*0.4 ,color:(themes[themeIndex]==="light")?'#1b1b1b':'snow',backgroundColor:(themes[themeIndex]==="light")?'rgb(248, 252, 255)':'rgb(42,42,42)',paddingBottom:'0rem'}} ref={textareaRef} onScroll={handleTextareaScroll}></textarea> 
                 </div>
-                <input onKeyDown={handleCommand} onChange={changeCommand} placeholder="Run Command Here (Press Esc to Enter)" id="cmd" style={{width:'100%',fontFamily:'poppins',fontSize:'1rem',border:'none',height:'4%',backgroundColor:(themes[themeIndex]==="light")?'snow':'#202020',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow'}}></input>
+                <input onKeyDown={handleCommand} onChange={changeCommand} placeholder="Run Command Here (Press Esc to Enter)" id="cmd" style={{textIndent:'6px',minHeight:'1.2rem',width:'100%',fontFamily:'poppins',fontSize:'1rem',border:'none',height:'4%',backgroundColor:(themes[themeIndex]==="light")?'snow':'#202020',paddingBottom:'0rem',color:(themes[themeIndex]==="light")?'#1b1b1b':'snow'}}></input>
                   
             </div>   
         </div>
