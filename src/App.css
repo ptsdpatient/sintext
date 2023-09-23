@@ -1,8 +1,4 @@
 @font-face{
-  font-family: 'anonymouspro';
-  src:url('./anonymouspro.ttf')
-}
-@font-face{
   font-family: 'cascadia';
   src:url('./cascadia.ttf')
 }
@@ -26,6 +22,38 @@
   font-family: 'jetbrains';
   src:url('./jetbrains.ttf')
 }
+@font-face{
+  font-family: 'arial';
+  src:url('./arial.ttf')
+}
+@font-face{
+  font-family: 'avenir';
+  src:url('./avenir.otf')
+}
+@font-face{
+  font-family: 'futura';
+  src:url('./futura.ttf')
+}
+@font-face{
+  font-family: 'helvetica';
+  src:url('./helvetica.ttf')
+}
+@font-face{
+  font-family: 'timesnewroman';
+  src:url('./timesnewroman.ttf')
+}
+@font-face{
+  font-family: 'univers';
+  src:url('./univers.otf')
+}
+@font-face{
+  font-family: 'verdana';
+  src:url('./verdana.ttf')
+}
+
+
+
+
 
 .uploadIcon{
   background-image: url("./assets/upload.png");
@@ -36,7 +64,7 @@
 }
 .downloadIcon{
   background-image: url("./assets/downloads.png");
-  background-size:46%;
+  background-size:42%;
   background-position: center;
   background-repeat: no-repeat;
   transition:all 0.2s;
@@ -134,9 +162,9 @@ body,html{
 }
 
 .xyz{
-  color:rgb(236, 247, 255);
-  color:rgb(32, 32, 32);
-  color:#eff8ff;
-  color:rgb(56, 56, 56);
+  color:#f1f9ff;
+  color:rgba(65, 65, 65, 0.486);
+  color:rgb(195, 229, 255);
+  color:#3333332c;
   color:#252525
 }
